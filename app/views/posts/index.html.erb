@@ -1,0 +1,26 @@
+<main>
+<%= link_to "Friends",'/friendships/index'%>
+	<% if user_signed_in? %>
+	<div id="new-post-form-container">
+		<%= form_for @post, remote: true do |f| %>
+			<%= f.label :content, "Add Post" %>
+			<%= f.text_area :content, placeholder: "Type Here" %>
+			<%= f.submit %>
+		<% end %>
+	</div>
+	<% end %>
+
+	<div id="posts-list-container">
+		<ul id="posts-list">
+			<% @posts.each do |post| %>
+				<%= render 'post', p: post %>
+			<% end %>
+		</ul>
+	</div>
+<%if user_signed_in?%>
+<%= @friends.each do |f|%>
+<p><%= f.email %></p>
+<%end%>
+<%end%>
+
+</main>

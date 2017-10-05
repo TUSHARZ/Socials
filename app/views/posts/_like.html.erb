@@ -1,0 +1,23 @@
+
+
+                <%if p.likes.find_by_user_id(current_user.id)==nil%>
+                <p>
+                <p id="like-<%= p.class %>_<%= p.id %>"> Like </p>
+                <%= link_to "hereismy" , new_like_path(:id => p.id , :li => p.class , :p => p) , remote: true %>
+                </p>
+                <%else %>
+                 <p>
+                <p id="like-<%= p.class %>_<%= p.id %>"> Unlike </p>
+                <%= link_to "here" , new_like_path(:id => p.id , :li => p.class , :p => p) , remote: true  %>
+                </p>
+                <%end%>
+
+
+
+                
+<p id="like-<%= p.class %>-<%= p.id %>"><%= p.likes.length %></p>
+
+
+
+
+

@@ -1,0 +1,5 @@
+
+<div id="friend-<%= p.id %>">        
+<p><%= p.email%> </p>
+<p><%= link_to 'Add Frind' ,new_friendship_path(:id => p.id),remote: true %> </p>
+</div>

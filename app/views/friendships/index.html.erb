@@ -1,0 +1,28 @@
+<main>
+<div class="friends-container">
+<%= @user.each do |u| %>
+
+<%if current_user.friends.find_by_email(u.email)==nil%>
+<%= render 'friend' , p: u %>
+
+
+<%end%>
+
+
+
+<%end%>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</main>
