@@ -9,7 +9,7 @@
 			</p>
 			<p id="like-container" class="author-details">
               
-				<p><%= render 'like' , p: p%></p>
+				<p><%= render 'like' , p: p %></p>
 			</p>
 		</div>
 		
@@ -17,7 +17,7 @@
 			<%= link_to "X", post_path(p.id), remote: true, method: :delete %>
 		</p>
 	</div>
-	<div class="post-comments-container">
+	<div class="post-comments-container">       
 		<%= form_for @comment , remote: true do |f| %>
 			<%= f.hidden_field :post_id, value: p.id %>
 			<%= f.text_area :content, placeholder: "Add Comment" %>
